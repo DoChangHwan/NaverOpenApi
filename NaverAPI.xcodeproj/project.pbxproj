@@ -14,6 +14,8 @@
 		C864A7FD28756FA6002DCBAE /* NaverAPI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C864A7FB28756FA6002DCBAE /* NaverAPI.xcdatamodeld */; };
 		C864A7FF28756FA7002DCBAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C864A7FE28756FA7002DCBAE /* Assets.xcassets */; };
 		C864A80228756FA7002DCBAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C864A80028756FA7002DCBAE /* LaunchScreen.storyboard */; };
+		C864A80A2875725C002DCBAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864A8092875725C002DCBAE /* SearchViewController.swift */; };
+		C864A80C28757276002DCBAE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864A80B28757276002DCBAE /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		C864A7FE28756FA7002DCBAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C864A80128756FA7002DCBAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C864A80328756FA7002DCBAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C864A8092875725C002DCBAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C864A80B28757276002DCBAE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				C864A7F228756FA6002DCBAE /* AppDelegate.swift */,
 				C864A7F428756FA6002DCBAE /* SceneDelegate.swift */,
 				C864A7F628756FA6002DCBAE /* ViewController.swift */,
+				C864A8092875725C002DCBAE /* SearchViewController.swift */,
+				C864A80B28757276002DCBAE /* TableViewController.swift */,
 				C864A7F828756FA6002DCBAE /* Main.storyboard */,
 				C864A7FE28756FA7002DCBAE /* Assets.xcassets */,
 				C864A80028756FA7002DCBAE /* LaunchScreen.storyboard */,
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C864A80A2875725C002DCBAE /* SearchViewController.swift in Sources */,
+				C864A80C28757276002DCBAE /* TableViewController.swift in Sources */,
 				C864A7F728756FA6002DCBAE /* ViewController.swift in Sources */,
 				C864A7F328756FA6002DCBAE /* AppDelegate.swift in Sources */,
 				C864A7F528756FA6002DCBAE /* SceneDelegate.swift in Sources */,
