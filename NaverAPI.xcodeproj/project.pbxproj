@@ -9,27 +9,27 @@
 /* Begin PBXBuildFile section */
 		C864A7F328756FA6002DCBAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864A7F228756FA6002DCBAE /* AppDelegate.swift */; };
 		C864A7F528756FA6002DCBAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864A7F428756FA6002DCBAE /* SceneDelegate.swift */; };
-		C864A7F728756FA6002DCBAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864A7F628756FA6002DCBAE /* ViewController.swift */; };
-		C864A7FA28756FA6002DCBAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C864A7F828756FA6002DCBAE /* Main.storyboard */; };
 		C864A7FD28756FA6002DCBAE /* NaverAPI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C864A7FB28756FA6002DCBAE /* NaverAPI.xcdatamodeld */; };
 		C864A7FF28756FA7002DCBAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C864A7FE28756FA7002DCBAE /* Assets.xcassets */; };
 		C864A80228756FA7002DCBAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C864A80028756FA7002DCBAE /* LaunchScreen.storyboard */; };
 		C864A80A2875725C002DCBAE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864A8092875725C002DCBAE /* SearchViewController.swift */; };
 		C864A80C28757276002DCBAE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864A80B28757276002DCBAE /* TableViewController.swift */; };
+		C8C956B32877FCCD004B513D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C956B22877FCCD004B513D /* Model.swift */; };
+		C8C956BB2877FE8D004B513D /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C956BA2877FE8D004B513D /* MoviesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C864A7EF28756FA6002DCBAE /* NaverAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C864A7F228756FA6002DCBAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C864A7F428756FA6002DCBAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C864A7F628756FA6002DCBAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C864A7F928756FA6002DCBAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C864A7FC28756FA6002DCBAE /* NaverAPI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NaverAPI.xcdatamodel; sourceTree = "<group>"; };
 		C864A7FE28756FA7002DCBAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C864A80128756FA7002DCBAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C864A80328756FA7002DCBAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C864A8092875725C002DCBAE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C864A80B28757276002DCBAE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C8C956B22877FCCD004B513D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C8C956BA2877FE8D004B513D /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +64,10 @@
 			children = (
 				C864A7F228756FA6002DCBAE /* AppDelegate.swift */,
 				C864A7F428756FA6002DCBAE /* SceneDelegate.swift */,
-				C864A7F628756FA6002DCBAE /* ViewController.swift */,
 				C864A8092875725C002DCBAE /* SearchViewController.swift */,
 				C864A80B28757276002DCBAE /* TableViewController.swift */,
-				C864A7F828756FA6002DCBAE /* Main.storyboard */,
+				C8C956B22877FCCD004B513D /* Model.swift */,
+				C8C956BA2877FE8D004B513D /* MoviesTableViewCell.swift */,
 				C864A7FE28756FA7002DCBAE /* Assets.xcassets */,
 				C864A80028756FA7002DCBAE /* LaunchScreen.storyboard */,
 				C864A80328756FA7002DCBAE /* Info.plist */,
@@ -136,7 +136,6 @@
 			files = (
 				C864A80228756FA7002DCBAE /* LaunchScreen.storyboard in Resources */,
 				C864A7FF28756FA7002DCBAE /* Assets.xcassets in Resources */,
-				C864A7FA28756FA6002DCBAE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,10 +147,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C864A80A2875725C002DCBAE /* SearchViewController.swift in Sources */,
+				C8C956B32877FCCD004B513D /* Model.swift in Sources */,
 				C864A80C28757276002DCBAE /* TableViewController.swift in Sources */,
-				C864A7F728756FA6002DCBAE /* ViewController.swift in Sources */,
 				C864A7F328756FA6002DCBAE /* AppDelegate.swift in Sources */,
 				C864A7F528756FA6002DCBAE /* SceneDelegate.swift in Sources */,
+				C8C956BB2877FE8D004B513D /* MoviesTableViewCell.swift in Sources */,
 				C864A7FD28756FA6002DCBAE /* NaverAPI.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,14 +159,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C864A7F828756FA6002DCBAE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C864A7F928756FA6002DCBAE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C864A80028756FA7002DCBAE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -306,7 +298,6 @@
 				INFOPLIST_FILE = NaverAPI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +325,6 @@
 				INFOPLIST_FILE = NaverAPI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
