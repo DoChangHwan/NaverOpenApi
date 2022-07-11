@@ -17,11 +17,8 @@ class Movie {
     var director:String?
     var actors:String?
     var userRating:String?
-    
     init() {
-        
     }
-    
     func getPosterImage() {
         guard imageURL != nil else {
             return

@@ -10,12 +10,9 @@ import os.log
 import SafariServices
 
 class TableViewController: UITableViewController, XMLParserDelegate {
-    
     let posterImageQueue = DispatchQueue(label: "posterImage")
-    
     let clientID = "B5HQrTioM1KLo6p91Pld"
     let clientSecret = "5aOv8ZFSGK"
-    
     var queryText: String?
     var movies:[Movie] = []
     
@@ -23,7 +20,6 @@ class TableViewController: UITableViewController, XMLParserDelegate {
     var currentTag: String? = ""
     var currentElement: String = ""
     var item: Movie?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
        // if let title = queryText {
@@ -32,7 +28,6 @@ class TableViewController: UITableViewController, XMLParserDelegate {
         searchMovies()
         // Do any additional setup after loading the view.
     }
-    
     func searchMovies() {
         movies = []
         
@@ -42,25 +37,21 @@ class TableViewController: UITableViewController, XMLParserDelegate {
         let urlString = "https://openapi.naver.com/v1/search/movie.xml?query=" + query
         let urlWithPercentEscapes = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         let url = URL(string: urlWithPercentEscapes!)
-        
         var request = URLRequest(url: url!)
         request.addValue("application/xml; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.addValue(clientID, forHTTPHeaderField: "X-Naver-Client-Id")
         request.addValue(clientSecret, forHTTPHeaderField: "X-Naver-Client-Secret")
-        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             // 에러가 있으면 리턴
             guard error == nil else {
                 print(error as Any)
                 return
             }
-            
             // 데이터가 비었으면 출력 후 리턴
             guard let data = data else {
                 print("Data is empty")
                 return
             }
-            
             // 데이터 초기화
             self.item?.actors = ""
             self.item?.director = ""
@@ -69,7 +60,6 @@ class TableViewController: UITableViewController, XMLParserDelegate {
             self.item?.pubDate = ""
             self.item?.title = ""
             self.item?.userRating = ""
-            
             // Parse the XML
             let parser = XMLParser(data: Data(data))
             parser.delegate = self
@@ -82,7 +72,6 @@ class TableViewController: UITableViewController, XMLParserDelegate {
         }
         task.resume()
     }
-    
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         if elementName == "title" || elementName == "link" || elementName == "image" || elementName == "pubDate" || elementName == "director" || elementName == "actor" || elementName == "userRating" {
             currentElement = ""
@@ -91,11 +80,9 @@ class TableViewController: UITableViewController, XMLParserDelegate {
             }
         }
     }
-    
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         currentElement += string
     }
-    
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "title" {
             item?.title = currentElement.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
@@ -123,7 +110,6 @@ class TableViewController: UITableViewController, XMLParserDelegate {
             }
         }
     }
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -137,35 +123,29 @@ class TableViewController: UITableViewController, XMLParserDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCellIdentifier", for: indexPath) as! MoviesTableViewCell
         let movie = movies[indexPath.row]
-        guard let title = movie.title, let pubDate = movie.pubDate, let userRating = movie.userRating, let director = movie.director, let actor = movie.actors else {
+        guard let title = movie.title,let pubDate = movie.pubDate, let userRating = movie.userRating, let director = movie.director, let actor = movie.actors else {
             return cell
         }
-        
         // 제목 및 개봉년도 레이블
         cell.titleAndYearLabel.text = "\(title)(\(pubDate))"
-        
         // 평점 레이블
         if userRating == "0.00" {
             cell.userRatingLabel.text = "정보 없음"
         } else {
             cell.userRatingLabel.text = "\(userRating)"
         }
-        
         // 감독 레이블
         if director == "" {
             cell.directorLabel.text = "정보 없음"
         } else {
             cell.directorLabel.text = "\(director)"
         }
-        
         // 출연 배우 레이블
         if actor == "" {
             cell.actorsLabel.text = "정보 없음"
         } else {
             cell.actorsLabel.text = "\(actor)"
         }
-        
-        
         // Async activity
         // 영화 포스터 이미지 불러오기
         if let posterImage = movie.image {
@@ -193,7 +173,5 @@ class TableViewController: UITableViewController, XMLParserDelegate {
             }
         }
     }
-    
 }
-
 

@@ -18,7 +18,6 @@ class SearchViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     private lazy var searchButton: UIButton = {
         let button = UIButton()
         button.setTitle("검색", for: .normal)
@@ -28,14 +27,12 @@ class SearchViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubview()
         setupMainLayout()
         self.view.backgroundColor = UIColor.white
     }
-    
     func addSubview() {
         [
             titleLabel,
@@ -45,9 +42,7 @@ class SearchViewController: UIViewController {
                 view.addSubview($0)
         }
     }
-    
     private func setupMainLayout() {
-
 
         titleLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
@@ -56,13 +51,12 @@ class SearchViewController: UIViewController {
         titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
         searchButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        searchButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 28).isActive = true
+        searchButton.topAnchor.constraint(equalTo:titleLabel.bottomAnchor, constant: 28).isActive = true
         searchButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         searchButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         searchButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
 
     }
-    
     @objc private func didTapButton() {
         let rootVC = TableViewController()
         let navVC = UINavigationController(rootViewController: rootVC)
