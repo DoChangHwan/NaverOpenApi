@@ -8,44 +8,44 @@ import Foundation
 import UIKit
 import SnapKit
 
-class MoviesTableViewCell: UITableViewCell {
-    
+final class MoviesTableViewCell: UITableViewCell {
+    static let identifier = "MoviesTableViewCell"
  //   @IBOutlet weak var titleAndYearLabel: UILabel!
  //   @IBOutlet weak var posterImageView: UIImageView!
  //   @IBOutlet weak var userRatingLabel: UILabel!
  //   @IBOutlet weak var directorLabel: UILabel!
  //   @IBOutlet weak var actorsLabel: UILabel!
-    private lazy var titleAndYearLabel: UILabel = {
+    var titleAndYearLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
         return label
     }()
     
-    private lazy var userRatingLabel: UILabel = {
+    var userRatingLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
         return label
     }()
     
-    private lazy var directorLabel: UILabel = {
+    var directorLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
         return label
     }()
     
-    private lazy var actorsLabel: UILabel = {
+    var actorsLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
         return label
     }()
-    func setupCell(title: String, putDate: String) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
-        titleAndYearLabel.text = title.htmlToString
-    
-        
     }
-    
-    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 private extension MoviesTableViewCell {
     func setupViews() {
         [
@@ -66,9 +66,20 @@ private extension MoviesTableViewCell {
         }
 
         userRatingLabel.snp.makeConstraints {
-            $0.top.equalTo(newsTitleLabel.snp.bottom).offset(4.0)
+            $0.top.equalTo(titleAndYearLabel.snp.bottom).offset(4.0)
+            $0.trailing.equalToSuperview().offset(-inset)
+            $0.bottom.equalToSuperview().offset(-8.0)
+        }
+        directorLabel.snp.makeConstraints {
+            $0.top.equalTo(userRatingLabel.snp.bottom).offset(4.0)
+            $0.trailing.equalToSuperview().offset(-inset)
+            $0.bottom.equalToSuperview().offset(-8.0)
+        }
+        actorsLabel.snp.makeConstraints {
+            $0.top.equalTo(directorLabel.snp.bottom).offset(4.0)
             $0.trailing.equalToSuperview().offset(-inset)
             $0.bottom.equalToSuperview().offset(-8.0)
         }
     }
-}
+ }
+

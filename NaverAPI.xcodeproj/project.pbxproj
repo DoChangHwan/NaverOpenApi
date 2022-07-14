@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		781550FF7B579D7E9FDF7547 /* Pods_NaverAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843AC2427A07E884B2EC8027 /* Pods_NaverAPI.framework */; };
+		C8510F85287FDF8B0075247C /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8510F84287FDF8B0075247C /* Extension+String.swift */; };
 		C864A7F328756FA6002DCBAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864A7F228756FA6002DCBAE /* AppDelegate.swift */; };
 		C864A7F528756FA6002DCBAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C864A7F428756FA6002DCBAE /* SceneDelegate.swift */; };
 		C864A7FD28756FA6002DCBAE /* NaverAPI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C864A7FB28756FA6002DCBAE /* NaverAPI.xcdatamodeld */; };
@@ -23,6 +24,7 @@
 		50A13C38A270A61A837C9EE3 /* Pods-NaverAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaverAPI.release.xcconfig"; path = "Target Support Files/Pods-NaverAPI/Pods-NaverAPI.release.xcconfig"; sourceTree = "<group>"; };
 		843AC2427A07E884B2EC8027 /* Pods_NaverAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NaverAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C824F28744926572C1AA408B /* Pods-NaverAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NaverAPI.debug.xcconfig"; path = "Target Support Files/Pods-NaverAPI/Pods-NaverAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		C8510F84287FDF8B0075247C /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		C864A7EF28756FA6002DCBAE /* NaverAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NaverAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C864A7F228756FA6002DCBAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C864A7F428756FA6002DCBAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				C864A80028756FA7002DCBAE /* LaunchScreen.storyboard */,
 				C864A80328756FA7002DCBAE /* Info.plist */,
 				C864A7FB28756FA6002DCBAE /* NaverAPI.xcdatamodeld */,
+				C8510F84287FDF8B0075247C /* Extension+String.swift */,
 			);
 			path = NaverAPI;
 			sourceTree = "<group>";
@@ -112,6 +115,7 @@
 				C864A7EC28756FA6002DCBAE /* Frameworks */,
 				C864A7ED28756FA6002DCBAE /* Resources */,
 				C8708CBB28780E280003F378 /* Lint Script */,
+				F0D0DFDB5EBE1AFE186F4A5C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,6 +150,9 @@
 				Base,
 			);
 			mainGroup = C864A7E628756FA6002DCBAE;
+			packageReferences = (
+				C83F4385287E7AD60027E3A8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = C864A7F028756FA6002DCBAE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,7 +213,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		F0D0DFDB5EBE1AFE186F4A5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NaverAPI/Pods-NaverAPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NaverAPI/Pods-NaverAPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NaverAPI/Pods-NaverAPI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -215,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8510F85287FDF8B0075247C /* Extension+String.swift in Sources */,
 				C864A80A2875725C002DCBAE /* SearchViewController.swift in Sources */,
 				C8C956B32877FCCD004B513D /* Model.swift in Sources */,
 				C864A80C28757276002DCBAE /* TableViewController.swift in Sources */,
@@ -433,6 +458,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C83F4385287E7AD60027E3A8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		C864A7FB28756FA6002DCBAE /* NaverAPI.xcdatamodeld */ = {

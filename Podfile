@@ -7,4 +7,5 @@ target 'NaverAPI' do
 
   # Pods for NaverAPI
   pod 'SwiftLint'
+  pod 'SnapKit'
 end

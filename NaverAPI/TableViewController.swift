@@ -25,6 +25,9 @@ class TableViewController: UITableViewController, XMLParserDelegate {
        // if let title = queryText {
       //      titleNavigationItem.title = title
       //  }
+        tableView.register(MoviesTableViewCell.self, forCellReuseIdentifier: MoviesTableViewCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
         searchMovies()
         // Do any additional setup after loading the view.
     }
@@ -117,38 +120,38 @@ class TableViewController: UITableViewController, XMLParserDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return 10
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCellIdentifier", for: indexPath) as! MoviesTableViewCell
-        let movie = movies[indexPath.row]
-        guard let title = movie.title,let pubDate = movie.pubDate, let userRating = movie.userRating, let director = movie.director, let actor = movie.actors else {
-            return cell
-        }
-        // 제목 및 개봉년도 레이블
-        cell.titleAndYearLabel.text = "\(title)(\(pubDate))"
-        // 평점 레이블
-        if userRating == "0.00" {
-            cell.userRatingLabel.text = "정보 없음"
-        } else {
-            cell.userRatingLabel.text = "\(userRating)"
-        }
-        // 감독 레이블
-        if director == "" {
-            cell.directorLabel.text = "정보 없음"
-        } else {
-            cell.directorLabel.text = "\(director)"
-        }
-        // 출연 배우 레이블
-        if actor == "" {
-            cell.actorsLabel.text = "정보 없음"
-        } else {
-            cell.actorsLabel.text = "\(actor)"
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: MoviesTableViewCell.identifier, for: indexPath) as! MoviesTableViewCell
+//        let movie = movies[indexPath.row]
+//        guard let title = movie.title,let pubDate = movie.pubDate, let userRating = movie.userRating, let director = movie.director, let actor = movie.actors else {
+//            return cell
+//        }
+//        // 제목 및 개봉년도 레이블
+//        cell.titleAndYearLabel.text = "\(title)(\(pubDate))"
+//        // 평점 레이블
+//        if userRating == "0.00" {
+//            cell.userRatingLabel.text = "정보 없음"
+//        } else {
+//            cell.userRatingLabel.text = "\(userRating)"
+//        }
+//        // 감독 레이블
+//        if director == "" {
+//            cell.directorLabel.text = "정보 없음"
+//        } else {
+//            cell.directorLabel.text = "\(director)"
+//        }
+//        // 출연 배우 레이블
+//        if actor == "" {
+//            cell.actorsLabel.text = "정보 없음"
+//        } else {
+//            cell.actorsLabel.text = "\(actor)"
+//        }
         // Async activity
         // 영화 포스터 이미지 불러오기
-        if let posterImage = movie.image {
+     /*   if let posterImage = movie.image {
             cell.posterImageView.image = posterImage
         } else {
             cell.posterImageView.image = UIImage(named: "noImage")
@@ -161,7 +164,9 @@ class TableViewController: UITableViewController, XMLParserDelegate {
                     cell.posterImageView.image = thumbImage
                 }
             })
-        }
+        }*/
+        
+        cell.backgroundColor = .red
         return cell
     }
 
